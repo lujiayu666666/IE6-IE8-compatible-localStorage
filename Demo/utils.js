@@ -17,12 +17,15 @@ if (typeof (localStorage) == 'undefined') {
     //模拟 setItem
     setItem: function (nam, val) {
       userdataobj.load(nam);  //打开文件 
+
       userdataobj.setAttribute(nam, val);  //为指定属性赋值
+
       var d = new Date();
+      
       d.setDate(d.getDate() + 700);
 
       userdataobj.expires = d.toUTCString();
-      console.log(userdataobj.expires)
+
       userdataobj.save(nam);
 
       userdataobj.load("userdata_record");
@@ -110,6 +113,8 @@ if (typeof (localStorage) == 'undefined') {
     userdataobj.save(keyname);
 
   }
+
+  console.log(localStorage)
 
 }
 
