@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,12 @@
   <title>B</title>
   <script src="./utils.js"></script>
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
     }
 
-    #box{
+    #box {
       position: absolute;
       top: 42%;
       left: 45%;
@@ -20,41 +21,45 @@
     }
   </style>
 </head>
+
 <body>
 
-  <div id='box'></div>  
-<script>
-//获取
-var name = localStorage.getItem('name'),
-    age = localStorage.getItem('age'),
-    sex = localStorage.getItem('sex');
+  <div id='box'></div>
+  <script>
+    
+    // 测试第二次commit
 
-var box = document.getElementById('box');
+    //获取
+    var name = localStorage.getItem('name'),
+      age = localStorage.getItem('age'),
+      sex = localStorage.getItem('sex');
 
-box.innerHTML = '姓名:' + name + '<br/>' + '年龄:' + age + '<br/>' + '性别:' + sex;
+    var box = document.getElementById('box');
 
-
-
-//清除所有缓存信息
-//setTimeout(function(){
-//  localStorage.clear()//清空缓存值IE8一下不兼容split方法，此处有问题
-//  boxs.innerHTML = '姓名:' + name + '<br/>' + '年龄:' + age + '<br/>' + '性别:' + sex;
-//},5000)
-
-
-  setTimeout(function(){
-    localStorage.removeItem('name')//清空缓存值
-    localStorage.removeItem('age')
-    localStorage.removeItem('sex')
     box.innerHTML = '姓名:' + name + '<br/>' + '年龄:' + age + '<br/>' + '性别:' + sex;
-    console.log(name,age,sex) // JY 18 boy    由此可以看出userData在删除值时需做页面刷新才会触发值得更新
-  },5000)
 
 
-  //5秒后手动刷新页面可看到效果所有字段为null
 
-</script>
+    //清除所有缓存信息
+    //setTimeout(function(){
+    //  localStorage.clear()//清空缓存值IE8一下不兼容split方法，此处有问题
+    //  boxs.innerHTML = '姓名:' + name + '<br/>' + '年龄:' + age + '<br/>' + '性别:' + sex;
+    //},5000)
+
+
+    setTimeout(function () {
+      localStorage.removeItem('name') //清空缓存值
+      localStorage.removeItem('age')
+      localStorage.removeItem('sex')
+      box.innerHTML = '姓名:' + name + '<br/>' + '年龄:' + age + '<br/>' + '性别:' + sex;
+      console.log(name, age, sex) // JY 18 boy    由此可以看出userData在删除值时需做页面刷新才会触发值得更新
+    }, 5000)
+
+
+    //5秒后手动刷新页面可看到效果所有字段为null
+  </script>
 
 
 </body>
+
 </html>
